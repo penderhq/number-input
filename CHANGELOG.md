@@ -7,12 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2019-01-23
 ### Added
 - Support adding a custom class to the component
-- Support enabling / disabling the time input (date only)
-- Support entering dates in utc
-- Support disabling the inputs
-- Support placeholder for the time input
-- Support placeholder for the date input
-- Support custom time formats to enter a time
-- Support custom date formats to enter a date
-- Support entering a time
-- Support entering a date
+- Support enabling / disabling entering a negative number
+- Support controlling the precision of decimals being entered
+- Support entering a number (decimal)
+- Support entering a number (integer)
