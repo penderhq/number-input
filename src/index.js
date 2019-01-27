@@ -73,11 +73,11 @@ export default class NumberField extends React.Component {
                 data-role-id={this.props.roleId}
                 type="text"
                 className={cx(
-                    this.props.className,
                     css`
                         background: none;
                         border: none;
-                    `
+                    `,
+                    this.props.className
                 )}
                 value={number || ''}
                 onChange={this.handleChange}
