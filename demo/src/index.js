@@ -125,6 +125,61 @@ class Example3 extends Component {
     }
 }
 
+class Example4 extends Component {
+
+    state = {
+        value: 1.24
+    }
+
+    render() {
+        return <div>
+            <h2>
+                Controlled
+            </h2>
+            <div
+                className={css`
+                    width: 200px;
+                `}
+            >
+                <NumberInput
+                    value={this.state.value}
+                    format={'decimal'}
+                    precision={2}
+                    onChange={({value}) => {
+
+                        this.setState({
+                            value
+                        })
+                    }}
+                />
+            </div>
+            <div
+                className={css`
+                    width: 200px;
+                `}
+            >
+                <NumberInput
+                    value={this.state.value}
+                    format={'decimal'}
+                    precision={2}
+                    onChange={({value}) => {
+
+                        this.setState({
+                            value
+                        })
+                    }}
+                />
+            </div>
+            <h3>
+                State
+            </h3>
+            <pre>
+                {JSON.stringify(this.state, null, 2)}
+            </pre>
+        </div>
+    }
+}
+
 
 class Demo extends React.Component {
 
@@ -136,6 +191,7 @@ class Demo extends React.Component {
                 <Example1/>
                 <Example2/>
                 <Example3/>
+                <Example4/>
             </div>
         )
     }

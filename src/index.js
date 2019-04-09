@@ -63,6 +63,22 @@ export default class NumberField extends React.Component {
         })
     }
 
+    componentWillUpdate(nextProps) {
+
+        if (this.state.editing) {
+            return
+        }
+
+        const nextNumber = this.formatNumber(this.props.value)
+        const prevNumber = this.state.number
+
+        if (prevNumber !== nextNumber) {
+            this.setState({
+                number: nextNumber
+            })
+        }
+    }
+
     render() {
 
         const {number} = this.state
