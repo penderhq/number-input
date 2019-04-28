@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {Canvas, Heading, Paragraph, Box} from '@cmds/demo-utils'
 import {render} from 'react-dom'
 import {css} from 'emotion'
 import {injectGlobal} from 'emotion'
@@ -9,10 +10,15 @@ injectGlobal`
     }
     body {
         font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        margin: 0;
     }
 `
 
 import NumberInput from '../../src'
+
+const inputStyles = css`
+    font-size: 16px;
+`
 
 class Example1 extends Component {
 
@@ -22,15 +28,12 @@ class Example1 extends Component {
 
     render() {
         return <div>
-            <h2>
+            <Heading>
                 Integer
-            </h2>
-            <div
-                className={css`
-                    width: 200px;
-                `}
-            >
+            </Heading>
+            <Box>
                 <NumberInput
+                    className={inputStyles}
                     value={this.state.value}
                     onChange={({value}) => {
 
@@ -39,13 +42,15 @@ class Example1 extends Component {
                         })
                     }}
                 />
-            </div>
-            <h3>
+            </Box>
+            <Paragraph>
                 State
-            </h3>
-            <pre>
-                {JSON.stringify(this.state, null, 2)}
-            </pre>
+            </Paragraph>
+            <Box>
+                <pre>
+                    {JSON.stringify(this.state, null, 2)}
+                </pre>
+            </Box>
         </div>
     }
 }
@@ -58,15 +63,12 @@ class Example2 extends Component {
 
     render() {
         return <div>
-            <h2>
+            <Heading>
                 Decimal
-            </h2>
-            <div
-                className={css`
-                    width: 200px;
-                `}
-            >
+            </Heading>
+            <Box>
                 <NumberInput
+                    className={inputStyles}
                     value={this.state.value}
                     format={'decimal'}
                     onChange={({value}) => {
@@ -76,13 +78,15 @@ class Example2 extends Component {
                         })
                     }}
                 />
-            </div>
-            <h3>
+            </Box>
+            <Paragraph>
                 State
-            </h3>
-            <pre>
-                {JSON.stringify(this.state, null, 2)}
-            </pre>
+            </Paragraph>
+            <Box>
+                <pre>
+                    {JSON.stringify(this.state, null, 2)}
+                </pre>
+            </Box>
         </div>
     }
 }
@@ -95,15 +99,12 @@ class Example3 extends Component {
 
     render() {
         return <div>
-            <h2>
+            <Heading>
                 Decimal with precision of 8
-            </h2>
-            <div
-                className={css`
-                    width: 200px;
-                `}
-            >
+            </Heading>
+            <Box>
                 <NumberInput
+                    className={inputStyles}
                     value={this.state.value}
                     format={'decimal'}
                     precision={8}
@@ -114,13 +115,15 @@ class Example3 extends Component {
                         })
                     }}
                 />
-            </div>
-            <h3>
+            </Box>
+            <Paragraph>
                 State
-            </h3>
-            <pre>
-                {JSON.stringify(this.state, null, 2)}
-            </pre>
+            </Paragraph>
+            <Box>
+                <pre>
+                    {JSON.stringify(this.state, null, 2)}
+                </pre>
+            </Box>
         </div>
     }
 }
@@ -133,15 +136,12 @@ class Example4 extends Component {
 
     render() {
         return <div>
-            <h2>
+            <Heading>
                 Controlled
-            </h2>
-            <div
-                className={css`
-                    width: 200px;
-                `}
-            >
+            </Heading>
+            <Box>
                 <NumberInput
+                    className={inputStyles}
                     value={this.state.value}
                     format={'decimal'}
                     precision={2}
@@ -152,13 +152,10 @@ class Example4 extends Component {
                         })
                     }}
                 />
-            </div>
-            <div
-                className={css`
-                    width: 200px;
-                `}
-            >
+            </Box>
+            <Box>
                 <NumberInput
+                    className={inputStyles}
                     value={this.state.value}
                     format={'decimal'}
                     precision={2}
@@ -169,13 +166,15 @@ class Example4 extends Component {
                         })
                     }}
                 />
-            </div>
-            <h3>
+            </Box>
+            <Paragraph>
                 State
-            </h3>
-            <pre>
-                {JSON.stringify(this.state, null, 2)}
-            </pre>
+            </Paragraph>
+            <Box>
+                <pre>
+                    {JSON.stringify(this.state, null, 2)}
+                </pre>
+            </Box>
         </div>
     }
 }
@@ -186,13 +185,12 @@ class Demo extends React.Component {
     render() {
 
         return (
-            <div>
-                <h1>NumberInput Demo</h1>
+            <Canvas>
                 <Example1/>
                 <Example2/>
                 <Example3/>
                 <Example4/>
-            </div>
+            </Canvas>
         )
     }
 }
