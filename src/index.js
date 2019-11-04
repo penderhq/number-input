@@ -96,8 +96,9 @@ export default class NumberField extends React.Component {
                     -webkit-transition: border-color .15s ease-in-out;
                     appearance: none;
                     background-color: #fff;
-                    border: 1px solid #d9d9d9;
-                    border-radius: 3px;
+                    border: none;
+                    box-shadow: rgba(0, 0, 0, 0.09) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 1px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+                    border-radius: 6px;
                     color: #191919;
                     display: block;
                     font-size: 16px;
@@ -109,7 +110,7 @@ export default class NumberField extends React.Component {
                     max-width: 100%;
                     &:focus {
                         -webkit-transition-duration: 0s;
-                        border-color: #07f;
+                        box-shadow: rgb(0, 34, 253) 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.1) 0px 2px 4px, rgba(0, 0, 0, 0.1) 0px 0px 1px;
                         outline: 0;
                         transition-duration: 0s;
                     }
