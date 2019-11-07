@@ -26,13 +26,18 @@ export default class NumberField extends React.Component {
         allowNegative: PropTypes.bool,
         format: PropTypes.oneOf(['decimal', 'integer']),
         precision: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 7, 8]),
-        onChange: PropTypes.func.isRequired
+        onChange: PropTypes.func.isRequired,
+        size: PropTypes.oneOf([
+            'sm',
+            'md'
+        ])
     }
 
     static defaultProps = {
         allowNegative: false,
         format: 'integer',
-        precision: 2
+        precision: 2,
+        size: 'md'
     }
 
     state = {
@@ -102,7 +107,7 @@ export default class NumberField extends React.Component {
                     color: #191919;
                     display: block;
                     font-size: 16px;
-                    height: 38px;
+                    height: ${size === 'sm' ? '30px' : '38px'};
                     line-height: 1.42857;
                     padding: 5px 15px;
                     transition: border-color .15s ease-in-out;
