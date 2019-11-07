@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import parseNumber from './utils/parseNumber'
 import formatNumber from './utils/formatNumber'
-import {css, cx} from 'emotion'
+import { css, cx } from 'emotion'
 
 /**
  * Outlines
@@ -86,7 +86,9 @@ export default class NumberField extends React.Component {
 
     render() {
 
-        const {number} = this.state
+        const { number } = this.state
+
+        const { size } = this.props
 
         return (
             <input
